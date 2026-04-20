@@ -43,7 +43,7 @@
             for (let i = 0; i < Math.PI * 2; i += 0.05) {
                 let pos = heartFunction(i + t);
 
-                let scale = 15;
+                let scale = Math.min(canvas.width, canvas.height) / 30;
             let x = canvas.width / 2 + pos.x * scale;
             let y = canvas.height / 2 - pos.y * scale;
 
@@ -51,7 +51,7 @@
             ctx.shadowColor = 'pink';
             ctx.shadowBlur = 15;
 
-            ctx.font = '14px Arial';
+            ctx.font = `${Math.max(10, scale * 0.8)}px Arial`;
             ctx.fillText('I LOVE YOU KONKE', x, y);
 
             }
